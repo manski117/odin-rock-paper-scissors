@@ -10,6 +10,33 @@ function getComputerChoice(){
     return choices[randomNo]
 }
 
+function game(){
+    //use a loop to play a 5-round game that keeps score and announces the winner. 
+    alert("DO YOU WANT TO PLAY A GAME \nYou will now play a 5-round game against the computer. \nIf you win, you get to live.")
+    for (let i = 0; i < 2; i++){
+        let  choice = prompt("Type your choice of either rock, paper, or scissors").toUpperCase();
+        // if ((choice == "ROCK") || (choice == "PAPER") || (choice == "SCISSORS")){
+        //     continue;
+        // } else{
+        //     console.log("Not an option. You broke the game. Restart")
+        //     break;
+        // }
+        let message = RPSround(choice, getComputerChoice());
+        console.log(message);
+        console.log(`The score is \nHuman: ${humanScore} CPU: ${cpuScore}`);
+    }
+    console.log(`    The FINAL score is \nHuman: ${humanScore} CPU: ${cpuScore}`)
+    if (humanScore > cpuScore){
+        console.log("    Human WINS");
+
+    } else if(humanScore < cpuScore){
+        console.log("    Machine WINS");
+
+    } else {
+        console.log("    Let's call it a draw")
+    }
+}
+
 function RPSround(playerSelection, computerSelection){
     //This function plays a single round of RPS and returns a string that declares the winner of the round
     //This function is case-insensitive, so you can type any combo of capital and lowercase
