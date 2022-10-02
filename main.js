@@ -13,7 +13,7 @@ function getComputerChoice(){
 function game(){
     //use a loop to play a 5-round game that keeps score and announces the winner. 
     alert("DO YOU WANT TO PLAY A GAME \nYou will now play a 5-round game against the computer. \nIf you win, you get to live.")
-    for (let i = 0; i < 2; i++){
+    for (let i = 0; i < 5; i++){
         let  choice = prompt("Type your choice of either rock, paper, or scissors").toUpperCase();
         // if ((choice == "ROCK") || (choice == "PAPER") || (choice == "SCISSORS")){
         //     continue;
@@ -25,7 +25,7 @@ function game(){
         console.log(message);
         console.log(`The score is \nHuman: ${humanScore} CPU: ${cpuScore}`);
     }
-    console.log(`    The FINAL score is \nHuman: ${humanScore} CPU: ${cpuScore}`)
+    console.log(`    The FINAL score is \n    Human: ${humanScore} CPU: ${cpuScore}`)
     if (humanScore > cpuScore){
         console.log("    Human WINS");
 
