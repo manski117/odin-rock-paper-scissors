@@ -15,15 +15,18 @@ function game(){
     alert("DO YOU WANT TO PLAY A GAME \nYou will now play a 5-round game against the computer. \nIf you win, you get to live.")
     for (let i = 0; i < 5; i++){
         let  choice = prompt("Type your choice of either rock, paper, or scissors").toUpperCase();
-        // if ((choice == "ROCK") || (choice == "PAPER") || (choice == "SCISSORS")){
-        //     continue;
-        // } else{
-        //     console.log("Not an option. You broke the game. Restart")
-        //     break;
-        // }
-        let message = RPSround(choice, getComputerChoice());
-        console.log(message);
-        console.log(`The score is \nHuman: ${humanScore} CPU: ${cpuScore}`);
+        if ((choice == "ROCK") || (choice == "PAPER") || (choice == "SCISSORS")){
+            let message = RPSround(choice, getComputerChoice());
+            console.log(message);
+            console.log(`The score is \nHuman: ${humanScore} CPU: ${cpuScore}`);
+        } else{
+            console.log("Not an option. You broke the game. Restart")
+            //This if-statement block is to make sure the user passes in a string that works with the game.
+            break;
+        }
+        // let message = RPSround(choice, getComputerChoice());
+        // console.log(message);
+        // console.log(`The score is \nHuman: ${humanScore} CPU: ${cpuScore}`);
     }
     console.log(`    The FINAL score is \n    Human: ${humanScore} CPU: ${cpuScore}`)
     if (humanScore > cpuScore){
