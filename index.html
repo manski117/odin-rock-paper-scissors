@@ -4,12 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Rock Paper Scissors</title>
 </head>
 <body>
-    <h4>This game is meant to be played from the JS console, so none of the actual HTML on this page matters.</h1>
-    <h4>Testing now to see if getComputerChoice function works</h4>
-    <h4 style = "color: red";>Type "Ctrl + Shift + J to go to the console. <br>In the console, type "game()" to play the game.</h4>
+    <div class="flexbox-top">
+        <h1 class="white">Rock Paper Scissors!</h1>
+        <h5 class="white">-Who needs hands when you have buttons?-</h5>
+        <h2 class="white">Press a button to begin the game!</h2>
+    </div>
+    
+    <div class="flexbox-game">
+        <div class="score-counter">
+            <h3>Score will go here</h3>
+        </div>
+        
+        <div class="flexbox-buttons">
+            <ul class="buttons">
+                <li><button class="button-rock button">ROCK</button></li>
+                <li><button class="button-paper button">PAPER</button></li>
+                <li><button class="button-scissors button">SCISSORS</button></li>
+            </ul>
+
+
+        </div>
+    </div>
+
+
+    <div class="flexbox-scoreboard">
+
+
+    </div>
+
 </body>
 
 <script src="main.js"></script>
