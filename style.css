@@ -32,7 +32,24 @@ h4 {
     border-width: 2px;
     box-sizing: border-box;
     height: 40%;
-    
+        
+}
+
+.scoreboard{
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.score{
+    border-style: solid;
+    border-color:white;
+    border-width: 2px;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 40px;
     
 }
 

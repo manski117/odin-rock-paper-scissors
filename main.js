@@ -13,7 +13,7 @@ function getComputerChoice(){
 function game(){
     //use a loop to play a 5-round game that keeps score and announces the winner. 
     alert("DO YOU WANT TO PLAY A GAME \nYou will now play a 5-round game against the computer. \nIf you win, you get to live.")
-    for (let i = 0; i < 5; i++){
+    for (let i = 0; i < 3; i++){
         let  choice = prompt("Type your choice of either rock, paper, or scissors").toUpperCase();
         if ((choice == "ROCK") || (choice == "PAPER") || (choice == "SCISSORS")){
             let message = RPSround(choice, getComputerChoice());
@@ -106,4 +106,38 @@ function RPSround(playerSelection, computerSelection){
     }
     console.log('code still continues to run past switch block TRUE')
 
+}
+
+
+
+//This code will allow for player button selection to be sent to game function
+let rockButton = document.querySelector(".rock-butt")
+rockButton.addEventListener("click", rockPress)
+
+function rockPress(){
+    alert("You pressed the rock button");
+}
+
+let paperButton = document.querySelector(".paper-butt");
+paperButton.addEventListener("click", paperPress);
+function paperPress(){
+    alert("You pressed the paper button")
+}
+
+let scissorsButton = document.querySelector(".scissors-butt");
+scissorsButton.addEventListener("click", scissorPress);
+function scissorPress(){
+    alert("you pressed the scissors button");
+}
+
+
+
+
+
+//this will tell me if a button is pressed at all
+let button = document.querySelectorAll(".button");
+button.forEach(button => button.addEventListener("click", testButton));
+
+function testButton(){
+    alert("This button works");
 }
