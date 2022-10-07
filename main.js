@@ -51,8 +51,8 @@ function RPSround(playerSelection, computerSelection){
     //This switch statement will take the function to 1 of 3 if-statements to evaluate the results of combat
     switch(playerMove){
         case "ROCK":
-            console.log(`You slected ${playerMove}`)
-            console.log(`and CPU selected ${computerMove}`)
+            document.getElementById("log").innerText = `You slected ${playerMove}`;
+            alert(`and CPU selected ${computerMove}`)
             if (computerMove == "ROCK"){
                 message2player = `Draw. Nobody wins. ${playerMove} ties with ${computerMove}`;
                 return message2player;
@@ -118,9 +118,10 @@ document.getElementById("cpu-score").innerText = cpuScore;
 //This code will allow for player button selection to be sent to game function
 let rockButton = document.querySelector(".rock-butt")
 rockButton.addEventListener("click", rockPress)
-
 function rockPress(){
     alert("You pressed the rock button");
+    document.getElementById("log").innerText = "rock button pressed";
+    RPSround("ROCK", getComputerChoice());
     
 }
 
@@ -177,4 +178,6 @@ function checkWinner(){
         }
     }
 }
+
+
     
