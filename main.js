@@ -51,56 +51,83 @@ function RPSround(playerSelection, computerSelection){
     //This switch statement will take the function to 1 of 3 if-statements to evaluate the results of combat
     switch(playerMove){
         case "ROCK":
-            document.getElementById("log").innerText = `You slected ${playerMove}`;
-            alert(`and CPU selected ${computerMove}`)
+            
             if (computerMove == "ROCK"){
-                message2player = `Draw. Nobody wins. ${playerMove} ties with ${computerMove}`;
-                return message2player;
+                document.getElementById("log").innerText = 
+                `You slected ${playerMove} and CPU selected ${computerMove}.
+                \n It's a draw. Nobody wins. ${playerMove} ties with ${computerMove}`;
+                
+
             } else if (computerMove == "SCISSORS"){
-                message2player = `YOU WIN!!!!!!!!!! ${playerMove} beats ${computerMove}`;
+                document.getElementById("log").innerText = 
+                `You slected ${playerMove} and CPU selected ${computerMove}.
+                \n You win this round. ${playerMove} crushes ${computerMove}`;
                 humanScore ++;
+                updateScoreboard();
+                
                 return message2player;
 
             } else if (computerMove == "PAPER"){
-                message2player = `YOU LOSE!!!!!! ${computerMove} covers up ${playerMove}`;
+                document.getElementById("log").innerText = 
+                `You slected ${playerMove} and CPU selected ${computerMove}.
+                \n You lose this round. ${playerMove} is covered up by ${computerMove}`;
                 cpuScore ++;
+                updateScoreboard();
+                
                 return message2player;
             }
             break;
         
         case "PAPER":
-            console.log(`You slected ${playerMove}`)
-            console.log(`and CPU selected ${computerMove}`)
+            alert("paper selected")
             if (computerMove == "PAPER"){
-                message2player = `Draw. Nobody wins. ${playerMove} ties with ${computerMove}`;
+                document.getElementById("log").innerText = 
+                `You slected ${playerMove} and CPU selected ${computerMove}.
+                \n It's a draw. Nobody wins. ${playerMove} ties with ${computerMove}`;
+ 
                 return message2player;
             } else if (computerMove == "ROCK"){
-                message2player = `YOU WIN!!!!!!!!!! ${playerMove} covers up the ${computerMove}`;
+                document.getElementById("log").innerText = 
+                `You slected ${playerMove} and CPU selected ${computerMove}.
+                \n You win this round. ${playerMove} covers ${computerMove}`;
                 humanScore ++;
+                updateScoreboard();
                 return message2player;
 
             } else if (computerMove == "SCISSORS"){
-                message2player = `YOU LOSE!!!!!! ${computerMove} cuts right through ${playerMove}`;
+                document.getElementById("log").innerText = 
+                `You slected ${playerMove} and CPU selected ${computerMove}.
+                \n You lose this round. ${playerMove} cuts ${computerMove}`;
                 cpuScore ++;
+                updateScoreboard();
                 return message2player;
             }
             break;
             break;
 
         case "SCISSORS":
-            console.log(`You slected ${playerMove}`)
-            console.log(`and CPU selected ${computerMove}`)
+            alert("scissors selected");
             if (computerMove == "SCISSORS"){
-                message2player = `Draw. Nobody wins. ${playerMove} ties with ${computerMove}`;
+                document.getElementById("log").innerText = 
+                `You slected ${playerMove} and CPU selected ${computerMove}.
+                \n It's a draw. Nobody wins. ${playerMove} ties with ${computerMove}`;
+
                 return message2player;
             } else if (computerMove == "PAPER"){
-                message2player = `YOU WIN!!!!!!!!!! ${playerMove} cut up the ${computerMove}`;
+                document.getElementById("log").innerText = 
+                `You slected ${playerMove} and CPU selected ${computerMove}.
+                \n You win this round. ${playerMove} cuts ${computerMove}`;
                 humanScore ++;
+                updateScoreboard();
+                
                 return message2player;
 
             } else if (computerMove == "ROCK"){
-                message2player = `YOU LOSE!!!!!! ${computerMove} crushes the ${playerMove}`;
+                document.getElementById("log").innerText = 
+                `You slected ${playerMove} and CPU selected ${computerMove}.
+                \n You lose this round. ${playerMove} is crushed by ${computerMove}`;
                 cpuScore ++;
+                updateScoreboard();
                 return message2player;
             }
             break;
@@ -128,13 +155,18 @@ function rockPress(){
 let paperButton = document.querySelector(".paper-butt");
 paperButton.addEventListener("click", paperPress);
 function paperPress(){
-    alert("You pressed the paper button")
+    alert("You pressed the paper button");
+    document.getElementById("log").innerText = "paper button pressed";
+    RPSround("PAPER", getComputerChoice());
 }
 
 let scissorsButton = document.querySelector(".scissors-butt");
 scissorsButton.addEventListener("click", scissorPress);
 function scissorPress(){
     alert("you pressed the scissors button");
+    document.getElementById("log").innerText = "scissors button pressed";
+
+    RPSround("SCISSORS", getComputerChoice());
 }
 
 
