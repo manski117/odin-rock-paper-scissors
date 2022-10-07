@@ -1,7 +1,8 @@
 
 //initialize an empty score var to be used later to count victories/losses. 
 var humanScore = 0;
-var cpuScore = 0;
+var cpuScore = 0; 
+const victoryCondition = 5;
 
 function getComputerChoice(){
     //this randomly returns either 'rock' 'paper' or 'scissors'
@@ -108,6 +109,10 @@ function RPSround(playerSelection, computerSelection){
 
 }
 
+//Make sure score will update on webpage
+document.getElementById("h-score").innerText = humanScore;
+document.getElementById("cpu-score").innerText = cpuScore;
+
 
 
 //This code will allow for player button selection to be sent to game function
@@ -116,6 +121,7 @@ rockButton.addEventListener("click", rockPress)
 
 function rockPress(){
     alert("You pressed the rock button");
+    
 }
 
 let paperButton = document.querySelector(".paper-butt");
@@ -141,3 +147,34 @@ button.forEach(button => button.addEventListener("click", testButton));
 function testButton(){
     alert("This button works");
 }
+
+
+
+//Run this line to change one of the scores
+
+function updateScoreboard(){
+    document.getElementById("h-score").innerText = humanScore;
+    document.getElementById("cpu-score").innerText = cpuScore;
+    checkWinner();
+}
+
+
+function checkWinner(){
+    if ((humanScore < victoryCondition) && (cpuScore < victoryCondition)) return;
+    if ((humanScore >= victoryCondition) || (cpuScore = victoryCondition)){
+        alert(`    The FINAL score is \n    Human: ${humanScore} CPU: ${cpuScore}`)
+        if (humanScore > cpuScore){
+            alert("    Human WINS");
+            document.getElementById("final-results-readout").innerText = "HUMAN WINS"
+
+        } else if(humanScore < cpuScore){
+            alert("    Machine WINS");
+            document.getElementById("final-results-readout").innerText = "MACHINE WINS"
+
+        } else {
+            alert("    Let's call it a draw")
+            document.getElementById("final-results-readout").innerText = "DRAW???"
+        }
+    }
+}
+    
